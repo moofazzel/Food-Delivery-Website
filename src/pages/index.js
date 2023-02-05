@@ -2,8 +2,11 @@ import css from "../styles/Home.module.css";
 import HeroBanner from "@/component/HeroBanner";
 import Layout from "@/component/Layout";
 import Head from "next/head";
+import Services from "@/component/Services";
+import { client } from "@/lib/client";
+import Menu from "@/component/Menu";
 
-export default function Home() {
+export default function Home({ pizzas }) {
   return (
     <>
       <Layout>
@@ -19,9 +22,21 @@ export default function Home() {
           </Head>
           <main>
             <HeroBanner />
+            <Services />
+            <Menu pizzas={pizzas} />
           </main>
         </div>
       </Layout>
     </>
   );
 }
+
+export const getServerSideProps = async () => {
+  const query = '*[_type == "pizza"]';
+  const pizzas = await client.fetch(query);
+  return {
+    props: {
+      pizzas,
+    },
+  };
+};
