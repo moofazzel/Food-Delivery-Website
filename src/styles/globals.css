@@ -54,3 +54,14 @@ a {
   box-sizing: border-box;
   transition: all 300ms ease;
 }
+
+.btn {
+  color: #ffffff;
+  font-size: 1.1rem;
+  width: max-content;
+  padding: 1rem;
+  border-radius: 4rem;
+  border: none;
+  cursor: pointer;
+  background: var(--themeRed);
+}
