@@ -1,3 +1,4 @@
+import HeroBanner from "@/component/HeroBanner";
 import Layout from "@/component/Layout";
 import Head from "next/head";
 
@@ -16,7 +17,7 @@ export default function Home() {
             <link rel="icon" href="/assets/Logo.png" />
           </Head>
           <main>
-            <h1>food delivery website</h1>
+            <HeroBanner />
           </main>
         </div>
       </Layout>
